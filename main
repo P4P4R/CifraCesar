@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+
+void limpar()
+{
+    system ("clear || cls");
+}
+
+int main(){
+
+    char mensagem[100] = {'a', 'b', 'c', 'd', 'e', 'f','g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    char x,y;
+    long i, rot;
+    printf("DIgite a palavra: ");
+   gets(mensagem);
+    printf("\nQuantidade de rotacoes: ");
+    scanf("%ld", &rot);
+
+//ENCRIPTAR A MENSAGEM
+    for(i=0; mensagem[i] != '\0'; i++){
+        x = mensagem[i];
+        if(x >= 'a' && x <= 'z'){
+            x = x + rot;
+            if(x > 'z'){
+                x = x - 'z' + 'a' -1;
+            }
+            mensagem[i] = x;
+        }
+    }
+    printf("\nMensagem Encriptada: %s\n", mensagem);
+
+//DESCRIPTAR A MENSAGEM
+     for(i=0; mensagem[i] != '\0'; i++){
+        x = mensagem[i];
+        if(x >= 'a' && x <= 'z'){
+            x = x - rot;
+            if(x < 'a'){
+                x = x + 'z' - 'a' +1;
+            }
+            mensagem[i] = x;
+        }
+
+        mensagem[i]=x;
+    }
+    printf("\nMensagem Descriptada: %s\n", mensagem);
+
+
+
+    system("command");
+    //system("cls");
+    getchar();
+
+
+}
