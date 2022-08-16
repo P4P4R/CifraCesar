@@ -48,9 +48,8 @@ int main(){
     printf("\nMensagem Descriptada: %s\n", mensagem);
 
 
-
-    system("command");
-    //system("cls");
+    limpar(getchar);
+    system("cls");
     getchar();
 
 
